@@ -1,11 +1,11 @@
-const coloroptions=["red","green","black","blue","purple","yellow","pink","orange","red","green","black","blue","purple","yellow","pink","orange"]
+
 var count=false
 var card1
 var card2
 var level=1
 
 function asingcolor(){
-    var cards= document.getElementsByClassName("Card")
+    const coloroptions=["red","green","black","blue","purple","yellow","pink","orange","red","green","black","blue","purple","yellow","pink","orange"]
     var html=""
     var options=coloroptions
     for(i=0;i<16;i++){
@@ -86,6 +86,6 @@ function eval(){
 
 function rest(){
     document.getElementById("wrongcount").innerHTML=0;
-    document.getElementById("rightcount").innerHTM=0;
+    document.getElementById("rightcount").innerHTML=0;
     asingcolor()
 }
