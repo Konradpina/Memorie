@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>Memorie</title>
+        <style>
+            body{
+                margin: 0;
+                display: flex;
+                
+                justify-content: center;
+            }
+            .cards{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* background-color: rgb(255, 0, 0); */
+                width: 80vw;
+                height: 80vw;
+                
+            }
+            .Grid{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                height: 100%;
+                width: 100%;
+                margin-left: 5%;
+            }
+            .gridbit{
+                display: flex;
+                height: 70%;
+                width: 80%;
+                background-color: aqua;
+                justify-content: center;
+                align-items: center;
+                
+            }
+            .card{
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                /* animation: opacity1 1s forwards;
+                 */
+            }
+            .Opacity1 {
+                animation: opacity1 1s forwards;
+            }
+            @keyframes opacity1 {
+                100%{
+                    opacity: 1;
+                }
+            }
+            .points{
+                display: inline;
+                display: flex;
+                justify-content: space-around;
+                
+            }
+            .wrong{
+                color: red;
+               
+
+            }
+            .wrong,.right{
+                height: calc(100vh - 80vw);
+                font-size: calc(0.3*(100vh - 80vw));;
+                flex:1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .right{
+                color: rgb(0, 255, 21);
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="cards">
+                <div class="Grid">
+                    <div class="gridbit"><div class="Card" onclick="pick(1)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(2)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(3)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(4)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(5)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(6)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(7)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(8)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(9)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(10)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(11)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(12)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(13)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(14)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(15)"></div></div>
+                    <div class="gridbit"><div class="Card" onclick="pick(16)"></div></div>
+                </div>
+            </div>
+            <audio id="wrong" src="sound/wrong-47985.mp3"></audio>
+            <audio id="right" src="sound/interface-124464.mp3"></audio>
+            <audio id="trun" src="sound/click-104721.mp3"></audio>
+            <div class="points"><div class="wrong" id="wrongcount">0</div><div class="right" id="rightcount">0</div></div>
+        </div>
+       
+    </body>
+    <script src="memorie.js"></script>
+</html>
