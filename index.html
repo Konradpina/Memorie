@@ -31,9 +31,16 @@
                 background-color: aqua;
                 justify-content: center;
                 align-items: center;
+                background-color: #e5e5f7;
+                opacity: 0.8;
+                background-image:  linear-gradient(135deg, #000dff 25%, transparent 25%), linear-gradient(225deg, #f74444 25%, transparent 25%), linear-gradient(45deg, #444cf7 25%, transparent 25%), linear-gradient(315deg, #444cf7 25%, #e5e5f7 25%);
+                background-position:  10px 0, 10px 0, 0 0, 0 0;
+                background-size: 3vh 3vh;
+                background-repeat: repeat;
                 
             }
             .card{
+                
                 height: 100%;
                 width: 100%;
                 opacity: 0;
@@ -75,25 +82,10 @@
     <body>
         <div>
             <div class="cards">
-                <div class="Grid">
-                    <div class="gridbit"><div class="Card" onclick="pick(1)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(2)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(3)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(4)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(5)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(6)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(7)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(8)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(9)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(10)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(11)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(12)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(13)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(14)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(15)"></div></div>
-                    <div class="gridbit"><div class="Card" onclick="pick(16)"></div></div>
+                <div class="Grid" id="Grid">
                 </div>
             </div>
+            
             <audio id="wrong" src="sound/wrong-47985.mp3"></audio>
             <audio id="right" src="sound/interface-124464.mp3"></audio>
             <audio id="trun" src="sound/click-104721.mp3"></audio>
