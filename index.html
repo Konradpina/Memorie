@@ -41,18 +41,65 @@
             }
             .card{
                 
-                height: 100%;
-                width: 100%;
+                height: 90%;
+                width: 90%;
                 opacity: 0;
+                border: 1vh solid;
                 /* animation: opacity1 1s forwards;
                  */
             }
             .Opacity1 {
                 animation: opacity1 1s forwards;
             }
+            .switchup{
+                animation: switchupp 1s forwards;
+            }
+            .switchdown{
+                animation: switchdown 1s forwards;
+            }
             @keyframes opacity1 {
                 100%{
                     opacity: 1;
+                }
+            }
+            @keyframes switchdown {
+                99%{
+                    transform:translateY(+150%);
+                }
+                100%{
+
+                }
+            }
+            @keyframes switchup {
+                99%{
+                    transform:translateY(-150%);
+                }
+                100%{
+                    
+                }
+            }
+
+
+            .switchleft{
+                animation: switchleft 1s forwards;
+            }
+            .switchright{
+                animation: switchright 1s forwards;
+            }
+            @keyframes switchright {
+                99%{
+                    transform:translateZ(+150%);
+                }
+                100%{
+
+                }
+            }
+            @keyframes switchleft {
+                99%{
+                    transform:translateZ(150%);
+                }
+                100%{
+
                 }
             }
             .points{
@@ -63,20 +110,41 @@
             }
             .wrong{
                 color: red;
-               
-
-            }
-            .wrong,.right{
-                height: calc(100vh - 90vw);
-                font-size: calc(0.3*(100vh - 90vw));;
+                display: grid;
                 flex:1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+               /* display: flex;
+               flex:1;
+               justify-content: space-around; */
+                grid-template-columns: auto auto auto auto;
+                height: 100%;
+                width: 100%;
             }
             .right{
-                color: rgb(0, 255, 21);
+                flex:1;
+                justify-content: center;
+                text-align: center;
+
+                display: grid;
+                grid-template-columns: auto auto auto auto auto auto;
+                justify-content: space-around;
             }
+            
+            .lives{
+                height: 4vh;
+                border-radius: 50%;
+                width: 4vh;
+                margin: 1vh;
+                background-color: #000dff;
+            }
+  
+            .Matsch{
+                height: 2vh;
+                border-radius: 10%;
+                width: 2vh;
+                margin: 1vh;
+                background-color: #ff0000;
+            }
+            
         </style>
     </head>
     <body>
@@ -89,7 +157,13 @@
             <audio id="wrong" src="sound/wrong-47985.mp3"></audio>
             <audio id="right" src="sound/interface-124464.mp3"></audio>
             <audio id="trun" src="sound/click-104721.mp3"></audio>
-            <div class="points"><div class="wrong" id="wrongcount">0</div><div class="right" id="rightcount">0</div></div>
+            <div class="points">
+                <div class="wrong" id="wrongcount">
+                </div>
+                <div class="right" id="rightcount">
+                   
+                </div>
+            </div>
         </div>
        
     </body>
