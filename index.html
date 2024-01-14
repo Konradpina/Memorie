@@ -7,6 +7,8 @@
                 display: flex;
                 
                 justify-content: center;
+                transition:  background-color 0.5s;
+                background-color:#fff;
             }
             .cards{
                 display: flex;
@@ -37,7 +39,6 @@
                 background-position:  10px 0, 10px 0, 0 0, 0 0;
                 background-size: 3vh 3vh;
                 background-repeat: repeat;
-                
             }
             .card{
                 
@@ -52,7 +53,7 @@
                 animation: opacity1 1s forwards;
             }
             .switchup{
-                animation: switchupp 1s forwards;
+                animation: switchup 1s forwards;
             }
             .switchdown{
                 animation: switchdown 1s forwards;
@@ -147,7 +148,7 @@
             
         </style>
     </head>
-    <body>
+    <body id="body">
         <div>
             <div class="cards">
                 <div class="Grid" id="Grid">

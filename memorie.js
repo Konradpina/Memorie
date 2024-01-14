@@ -5,6 +5,7 @@ var card2
 const livecount=8
 const rightcount=16
 var level=1
+var schuffel=false
 
 function asingcolor(){
     const coloroptions=["red","green","black","blue","purple","yellow","pink","orange","red","green","black","blue","purple","yellow","pink","orange"]
@@ -24,9 +25,12 @@ function asingcolor(){
     var matchrendert=""
     for(i=0;i<livecount;i++){
         livesrendert=`${livesrendert}   <div class="lives"></div>`
+        console.log(Math.floor(Math.random()*12)+1)
     }
     for(i=0;i<rightcount;i++){
         matchrendert=`${matchrendert}   <div class="Matsch"></div>`
+        console.log(Math.floor(Math.random()*12)+1)
+
     }
     document.getElementById("rightcount").innerHTML=matchrendert;
     document.getElementById("wrongcount").innerHTML=livesrendert
@@ -36,7 +40,9 @@ function asingcolor(){
 asingcolor()
 
 function pick(number){
-    
+    if(schuffel){
+        return
+    }
     var cards= document.getElementsByClassName("Card")
     cards[number-1].classList.add("Opacity1")
     console.log(number)
@@ -48,6 +54,7 @@ function pick(number){
         eval()
         document.getElementById("trun").load()
         document.getElementById("trun").play()
+
 
         count=false
     }else{
@@ -122,6 +129,10 @@ function eval(){
             // document.getElementById("wrongcount").innerHTML=Number(document.getElementById("wrongcount").innerHTML)+1
         },1000)
     }
+    if(Math.floor(Math.random()*7)>5&&count){
+        schuffel=true
+        schuffelcards()
+    }
 }
 
 function rest(){
@@ -136,4 +147,24 @@ function right(){
         alert("You wone Great job. Level Up")
         rest()
     }
+}
+
+function schuffelcards(){
+    document.getElementById("body").style.backgroundColor="#f8bebe"
+    var zcard=Math.floor(Math.random()*12)
+    setTimeout(()=>{
+        document.getElementsByClassName("gridbit")[zcard].classList.add("switchdown")
+        document.getElementsByClassName("gridbit")[zcard+4].classList.add("switchup")
+        var reambercoulr= document.getElementsByClassName("Card")[zcard].style.backgroundColor
+        var reamberborder=document.getElementsByClassName("Card")[zcard].style.borderColor
+        document.getElementsByClassName("card")[zcard].style=`background-color:${document.getElementsByClassName("Card")[zcard+4].style.backgroundColor}; border-color:${document.getElementsByClassName("Card")[zcard+4].style.borderColor}`
+        document.getElementsByClassName("card")[zcard+4].style=`background-color:${reambercoulr}; border-color:${reamberborder}`
+    },3000)
+    setTimeout(() => {
+        document.getElementById("body").style.backgroundColor="#fff"
+        schuffel=false
+        document.getElementsByClassName("gridbit")[zcard].classList.remove("switchdown")
+        document.getElementsByClassName("gridbit")[zcard+4].classList.remove("switchup")
+    }, 4000);
+
 }
