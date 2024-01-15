@@ -1,7 +1,9 @@
 <html>
     <head>
         <title>Memorie</title>
+        <link rel="stylesheet" href="./style/adjust.css">
         <style>
+            
             body{
                 margin: 0;
                 display: flex;
@@ -11,6 +13,7 @@
                 background-color:#fff;
             }
             .cards{
+                margin-top: 3vh;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -145,11 +148,27 @@
                 margin: 1vh;
                 background-color: #ff0000;
             }
-            
+            .level{
+                display: flex;
+                justify-content: center;
+                margin: 2vh;
+                font-size: 4vh;
+                transition: all 1s;
+            }
+            .level div, .level:focus{
+                transition: all 0.2s;
+            }
+            .level:hover div{
+                color: #74f744;
+            }
+            .level:focus div{
+                color: #74f744;
+            }
         </style>
     </head>
     <body id="body">
         <div>
+            <div class="level" onclick="levelplus()">Level &nbsp<div id="level">2</div></div>
             <div class="cards">
                 <div class="Grid" id="Grid">
                 </div>
