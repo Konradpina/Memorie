@@ -2,7 +2,7 @@
 var count=false
 var card1
 var card2
-const livecount=8
+const livecount=16
 const rightcount=16
 var level=1
 var schuffel=false
