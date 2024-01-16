@@ -14,6 +14,9 @@ function asingcolor(){
     if(level>=5){
         level=0
     }
+
+
+
     document.getElementById("level").innerHTML=level+1
     var options=coloroptions
     for(i=0;i<16;i++){
@@ -22,12 +25,16 @@ function asingcolor(){
         if(level<=1){
             t=r
         }
-        html=`${html} <div class="gridbit"><div class="Card diamond" style="background-color:${options[r]}; border-color:${borderoptions[t]}" onclick="pick(${i+1})"></div></div>`
+        html=`${html} <div class="gridbit back${level}"><div class="Card diamond" style="background-color:${options[r]}; border-color:${borderoptions[t]}" onclick="pick(${i+1})"></div></div>`
         options.splice(r,1)
         borderoptions.splice(t,1)
-        console.log(html)
     }
-    if(level<=1){
+  
+
+    if(level===0){
+        rightcount=8
+        livecount=16
+    }else if(level<=1){
         rightcount=8
         livecount=8
     }else{
@@ -38,16 +45,13 @@ function asingcolor(){
     var matchrendert=""
     for(i=0;i<livecount;i++){
         livesrendert=`${livesrendert}   <div class="lives"></div>`
-        console.log(Math.floor(Math.random()*12)+1)
     }
     for(i=0;i<rightcount;i++){
         matchrendert=`${matchrendert}   <div class="Matsch"></div>`
-        console.log(Math.floor(Math.random()*12)+1)
 
     }
     document.getElementById("rightcount").innerHTML=matchrendert;
-    document.getElementById("wrongcount").innerHTML=livesrendert
-    console.log(html)
+    document.getElementById("wrongcount").innerHTML=livesrendert;
     document.getElementById("Grid").innerHTML=html
 }
 asingcolor()
@@ -184,7 +188,7 @@ function right(){
 }
 
 function schuffelcards(){
-    document.getElementById("body").style.backgroundColor="#f8bebe"
+    document.getElementById("body").style.backgroundColor="#8c2b2b"
     var zcard=Math.floor(Math.random()*12)
     setTimeout(()=>{
         document.getElementsByClassName("gridbit")[zcard].classList.add("switchdown")
@@ -204,7 +208,7 @@ function schuffelcards(){
 }
 
 function schuffelcards2(){
-    document.getElementById("body").style.backgroundColor="#f8bebe"
+    document.getElementById("body").style.backgroundColor="#8c2b2b"
     var zcard=Math.floor(Math.random()*12)
     var zcard2=Math.floor(Math.random()*12)
     zcard=4
